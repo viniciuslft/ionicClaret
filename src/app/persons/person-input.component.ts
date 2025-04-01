@@ -8,17 +8,25 @@ import { Event } from "ionicons/dist/types/stencil-public-runtime";
   styleUrl:'./person-input.component.scss'
 })
 export class PersonInputComponent {
-  @Output() personCreate = new EventEmitter<{ name: string}>();
+  @Output() personCreate = new EventEmitter<{ name: string, email: string, number: string}>();
   enteredPersonName = '';
+  enteredEmail = '';
+  enteredNumber = '';
 
   onCreatePerson() {
     console.log('Person created:', {
-      name: this.enteredPersonName
+      name: this.enteredPersonName,
+      email: this.enteredEmail,
+      number: this.enteredNumber
     });
     this.personCreate.emit({
-      name: this.enteredPersonName
+      name: this.enteredPersonName,
+      email: this.enteredEmail,
+      number: this.enteredNumber
     });
     // Limpar os campos após enviar
     this.enteredPersonName = '';
+    this.enteredEmail = '';
+    this.enteredNumber = '';
   }
 }
