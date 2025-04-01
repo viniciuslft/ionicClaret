@@ -1,0 +1,12 @@
+<div class="container">
+  <div class="box">
+    <h2>Enter Your Details</h2>
+
+    <!-- Campo para Nome -->
+    <label for="name">Name</label>
+    <input type="text" id="name" [(ngModel)]="enteredPersonName" placeholder="Enter your name">
+
+    <!-- Botão -->
+    <button (click)="onCreatePerson()">Create</button>
+  </div>
+</div>
